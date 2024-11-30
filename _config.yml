@@ -1,6 +1,6 @@
 title: DenDev
 description: My notes about mobile tech
-theme: jekyll-theme-clean-blog
+# theme: jekyll-theme-clean-blog
 remote_theme: StartBootstrap/startbootstrap-clean-blog-jekyll
 email: contact@dendv.com
 author: Den Ree
