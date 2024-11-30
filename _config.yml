@@ -1,2 +1,22 @@
-title: Den Dev Tech
+title: DenDev
 description: My notes about mobile tech
+theme: jekyll-theme-clean-blog
+email: contact@dendv.com
+author: Den Ree
+url: "https://dendv.com"
+
+# Social Profiles
+github_username: Den-Ree
+linkedin_username: den-rusakovich
+
+# Add your google-analytics ID here to activate google analytics
+# google_analytics:   UA-XXXXXXXXX-X # out your google-analytics code
+
+# Build settings
+markdown:           kramdown
+paginate:           5
+paginate_path:      "/posts/page:num/"
+plugins:
+  - jekyll-feed
+  - jekyll-paginate
+  - jekyll-sitemap ## Uncomment this line to silently generate a sitemaps.org compliant sitemap for your Jekyll site
