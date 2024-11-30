@@ -1,0 +1,21 @@
+:root {
+  --primary: #000000;
+  /* Define the primary color */
+  --primary-dark: #262121;
+  /* Darkened version of the primary color */
+  --white: #ffffff;
+  /* White color */
+}
+
+.btn-primary {
+  background-color: var(--primary);
+  border-color: var(--primary);
+}
+
+.btn-primary:hover,
+.btn-primary:focus,
+.btn-primary:active {
+  color: var(--white);
+  background-color: var(--primary-dark) !important;
+  border-color: var(--primary-dark) !important;
+}
