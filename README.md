@@ -1,1 +1,1 @@
-My notes about mobile tech
+My notes about mobile tech.
