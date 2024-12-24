@@ -17,21 +17,11 @@ category: swift-concurrency-guide
 
 ---
 
-## 1. Introduction to Swift Concurrency
-
-[Swift Concurrency](https://docs.swift.org/swift-book/documentation/the-swift-programming-language/concurrency/) (introduced in Swift 5.5) simplifies writing asynchronous code and enhances safety through features like:
-- `async/await` for clear, sequential asynchronous code.
-- Structured concurrency using `Task` and `TaskGroup`.
-- Actors to isolate mutable state and avoid data races.
-- Async sequences (`AsyncSequence`) for handling asynchronous streams.
+## 1. {% include post-topics/swift-concurrency-guide/async-await.md %}
 
 ---
 
-## 2. {% include post-topics/swift-concurrency-guide/async-await.md %}
-
----
-
-## 3. {% include post-topics/swift-concurrency-guide/tasks-and-groups.md %}
+## 2. {% include post-topics/swift-concurrency-guide/tasks-and-groups.md %}
 
 ---
 
@@ -55,3 +45,6 @@ category: swift-concurrency-guide
 
 ---
 
+## 9. Useful links
+
+- [Swift Concurrency](https://docs.swift.org/swift-book/documentation/the-swift-programming-language/concurrency/) 

@@ -403,3 +403,28 @@ By following these optimization strategies, you can write performant, scalable, 
 ## 9. Conclusion
 
 Swift Concurrency revolutionizes asynchronous programming in Swift. By replacing outdated threading and callback patterns, it enhances code readability, safety, and performance.
+
+---
+
+## **Advanced Async/Await Features**
+
+1. **Task Cancellation**:
+   - Use `Task.isCancelled` to check for cancellation and handle cleanup.
+   ```swift
+   func performTask() async {
+       while !Task.isCancelled {
+           // Perform work
+       }
+   }
+   ```
+
+2. **Task Priority**:
+   - Set task priority using `Task(priority: .high)`.
+
+---
+
+## **Debugging Async/Await**
+
+Use Xcode's async call stack to trace async function calls. Instruments can also profile and debug tasks using the Swift Concurrency Instrument.
+
+---
