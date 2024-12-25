@@ -148,3 +148,27 @@ func testTaskCancellation() async {
 ## **Conclusion**
 
 Testing and debugging concurrency in Swift is essential for building robust applications. By leveraging XCTest, Instruments, and careful design practices, you can ensure that your asynchronous workflows are correct, efficient, and easy to maintain.
+
+## **Task Traces**
+
+Swift Concurrency provides tools to trace task execution using Instruments.
+
+### Task Tracing Features:
+1. **Task Hierarchy Visualization**:
+   - View relationships between tasks and their parents.
+2. **Execution Timelines**:
+   - Analyze task execution times.
+3. **State Transitions**:
+   - Trace state changes (e.g., pending, running, suspended).
+
+
+## **Debugging and Optimization**
+
+1. **Use Instruments for Tracing**:
+   - Profile task execution to identify bottlenecks.
+
+2. **Log Task Events**:
+   - Add custom logs to trace task creation and completion.
+
+3. **Aggregate Task Metrics**:
+   - Monitor task group execution time and resource usage.
