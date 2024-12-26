@@ -1,7 +1,5 @@
 Async/Await
 
----
-
 The `async/await` syntax is a cornerstone of Swift Concurrency, allowing to write asynchronous code that looks and behaves like synchronous code.
 
 An `async` **function** is a function that can perform asynchronous work. It allows the function to suspend its execution until an asynchronous operation completes.

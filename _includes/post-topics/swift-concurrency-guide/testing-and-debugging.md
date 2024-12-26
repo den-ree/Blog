@@ -1,7 +1,5 @@
 Testing and Debugging
 
----
-
 Testing and debugging concurrency in Swift requires specialized tools and practices to ensure that asynchronous code behaves as expected under different conditions.
 
 ---

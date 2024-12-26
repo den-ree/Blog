@@ -1,7 +1,5 @@
 AsyncSequence for Async Streams
 
----
-
 `AsyncSequence` is a protocol introduced in Swift Concurrency to handle asynchronous streams of values. It is analogous to the `Sequence` protocol but works asynchronously, enabling developers to process data that arrives over time, such as network streams or real-time updates.
 
 It produces a sequence of values asynchronously. Consumers use the `for await` loop to retrieve these values one at a time, pausing execution until the next value is available.
