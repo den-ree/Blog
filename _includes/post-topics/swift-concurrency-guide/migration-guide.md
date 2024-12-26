@@ -1,7 +1,5 @@
 Migration Guide
 
----
-
 Migrating to Swift Concurrency involves transitioning existing asynchronous codebases to use modern features like `async/await`, actors, and task groups.
 
 #### Best Practices for Migration

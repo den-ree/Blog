@@ -1,7 +1,5 @@
 Advanced Techniques
 
----
-
 Swift Concurrency provides advanced techniques to fine-tune and extend concurrency for specialized use cases. These include features like detached tasks, task-local values, atomic values, sendable protocol, and handling advanced synchronization patterns.
 
 ---

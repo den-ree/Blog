@@ -2,7 +2,9 @@
 layout: post
 title: Swift Concurrency
 category: swift-concurrency-guide
+background: /img/swit-concurrency-post.jpg
 ---
+
 # Comprehensive Guide
 
 1. [Start with `async/await` syntax](#asyncawait)
@@ -55,4 +57,3 @@ category: swift-concurrency-guide
 - [Async Stream](https://developer.apple.com/documentation/swift/asyncstream)
 - [Async on WWDC](https://developer.apple.com/videos/all-videos/?q=async)
 - [Actor on WWDC](https://developer.apple.com/videos/all-videos/?q=actor)
-

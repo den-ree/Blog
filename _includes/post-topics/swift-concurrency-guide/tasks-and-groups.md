@@ -1,7 +1,5 @@
 Tasks and Task Groups
 
----
-
 `Tasks` and `Task Groups` to enable structured and unstructured concurrent operations. These tools allow developers to execute multiple tasks in parallel, manage their lifetimes, handle errors gracefully, and work efficiently with system resources.
 
 ---

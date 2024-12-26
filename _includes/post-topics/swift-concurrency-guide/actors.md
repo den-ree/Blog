@@ -1,7 +1,5 @@
 Actors and Sendable
 
----
-
 Actors are designed to ensure thread-safe access to shared mutable state. Distributed actors extend this concept to enable communication between processes or devices, making them ideal for distributed systems.
 
 `actor` is reference type that isolate state, ensuring that only one task can access their mutable state at a time. They simplify concurrency by handling synchronization automatically.
