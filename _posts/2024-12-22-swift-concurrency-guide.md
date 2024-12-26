@@ -1,50 +1,58 @@
 ---
 layout: post
-title: Swift Concurrency (WIP)
+title: Swift Concurrency
 category: swift-concurrency-guide
 ---
-# Comprehensive Guide to Concurrency in Swift
+# Comprehensive Guide
 
-1. [Introduction to Swift Concurrency](#introduction-to-swift-concurrency)
-2. [async/await Syntax](#2-asyncawait-syntax)
-3. [Structured Concurrency with Tasks](#structured-concurrency-with-tasks)
-4. [Actors for State Protection](#actors-for-state-protection)
-5. [AsyncSequence for Async Streams](#asyncsequence-for-async-streams)
-6. [Migrating Old Projects](#migrating-old-projects-to-swift-concurrency)
-7. [Writing New Projects with Swift Concurrency](#writing-new-projects-with-swift-concurrency)
-8. [Advanced Topics](#advanced-topics)
-9. [Conclusion](#conclusion)
-
----
-
-## 1. {% include post-topics/swift-concurrency-guide/async-await.md %}
+1. [Start with `async/await` syntax](#asyncawait)
+2. [Structured Concurrency with Tasks & Task Groups](#tasks-and-task-groups)
+3. [Actors for State Protection](#actors-and-sendable)
+4. [AsyncSequence for Async Streams](#asyncsequence-for-async-streams)
+5. [Migrating Old Projects](#migration-guide)
+6. [Advanced Techniques](#advanced-techniques)
+7. [Testing & Debugging](#testing-and-debugging)
+8. [Resources](#resources)
 
 ---
 
-## 2. {% include post-topics/swift-concurrency-guide/tasks-and-groups.md %}
+## {% include post-topics/swift-concurrency-guide/async-await.md %}
 
 ---
 
-## 4. {% include post-topics/swift-concurrency-guide/actors.md %}
+## {% include post-topics/swift-concurrency-guide/tasks-and-groups.md %}
 
 ---
 
-## 5. {% include post-topics/swift-concurrency-guide/async-sequence-and-streams.md %}
+## {% include post-topics/swift-concurrency-guide/actors.md %}
 
 ---
 
-## 6. {% include post-topics/swift-concurrency-guide/advanced-techniques-and-optimisation.md %}
+## {% include post-topics/swift-concurrency-guide/async-sequence-and-streams.md %}
 
 ---
 
-## 7. {% include post-topics/swift-concurrency-guide/migration-guide.md %}
+## {% include post-topics/swift-concurrency-guide/migration-guide.md %}
+
+---
+
+## {% include post-topics/swift-concurrency-guide/advanced-techniques-and-optimisation.md %}
 
 --- 
 
-## 8. {% include post-topics/swift-concurrency-guide/testing-and-debugging.md %}
+## {% include post-topics/swift-concurrency-guide/testing-and-debugging.md %}
 
 ---
 
-## 9. Useful links
+## Resources
 
 - [Swift Concurrency](https://docs.swift.org/swift-book/documentation/the-swift-programming-language/concurrency/) 
+- [Task](https://developer.apple.com/documentation/swift/task)
+- [Task Group](https://developer.apple.com/documentation/swift/taskgroup)
+- [Actor](https://developer.apple.com/documentation/swift/actor)
+- [Sendable](https://developer.apple.com/documentation/swift/sendable)
+- [Async Sequence](https://developer.apple.com/documentation/swift/asyncsequence)
+- [Async Stream](https://developer.apple.com/documentation/swift/asyncstream)
+- [Async on WWDC](https://developer.apple.com/videos/all-videos/?q=async)
+- [Actor on WWDC](https://developer.apple.com/videos/all-videos/?q=actor)
+

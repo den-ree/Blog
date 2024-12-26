@@ -1,4 +1,4 @@
-Actors & Sendable
+Actors and Sendable
 
 ---
 
