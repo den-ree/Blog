@@ -1,20 +1,16 @@
-
-# Comprehensive Guide to Testing and Debugging Concurrency in Swift Concurrency
-
----
-
-## **Overview**
-
-Testing and debugging concurrency in Swift requires specialized tools and practices to ensure that asynchronous code behaves as expected under different conditions. This guide covers strategies for writing tests, debugging asynchronous workflows, and using tools like Instruments.
+Testing and Debugging
 
 ---
 
-## **1. Unit Testing Asynchronous Code**
+Testing and debugging concurrency in Swift requires specialized tools and practices to ensure that asynchronous code behaves as expected under different conditions.
 
-### XCTest and Async/Await
-XCTest supports asynchronous tests using the `async` keyword.
+---
 
-#### Example:
+#### Unit Testing Asynchronous Code
+
+- XCTest, Swift Testing supports asynchronous tests using the `async` keyword.
+
+**XCTest and Async/Await**
 ```swift
 import XCTest
 
@@ -26,10 +22,7 @@ class NetworkTests: XCTestCase {
 }
 ```
 
-### Testing Task Groups
-Use expectations to validate task group results.
-
-#### Example:
+**Testing Task Groups**
 ```swift
 func testParallelProcessing() async throws {
     let results = try await withTaskGroup(of: Int.self) { group -> [Int] in
@@ -46,74 +39,7 @@ func testParallelProcessing() async throws {
 }
 ```
 
-### Mocking Asynchronous Dependencies
-Create mock objects to simulate asynchronous behaviors.
-
-#### Example:
-```swift
-class MockNetworkService {
-    func fetchData() async -> String {
-        return "Mock Data"
-    }
-}
-```
-
----
-
-## **2. Debugging Concurrency**
-
-### Debugging Tools
-Swift Concurrency integrates with Xcode and Instruments for advanced debugging.
-
-1. **Async Call Stack**:
-   - View the execution flow of asynchronous code in Xcode.
-   - Use breakpoints in `async` functions to step through code.
-
-2. **Concurrency Instrument in Instruments**:
-   - Profile tasks, actors, and task groups.
-   - Identify bottlenecks, long-running tasks, and contention points.
-
----
-
-## **3. Handling Common Issues**
-
-### Deadlocks
-Deadlocks occur when tasks wait indefinitely for each other. Avoid them by designing clear task hierarchies.
-
-#### Debugging Deadlocks:
-1. Use the thread debugger in Xcode to inspect thread states.
-2. Check for circular dependencies in task interactions.
-
-### Data Races
-Data races happen when multiple tasks access shared mutable data simultaneously.
-
-#### Prevention:
-1. Use actors to isolate state.
-2. Annotate shared state with `@Sendable`.
-
----
-
-## **4. Debugging Actors**
-
-Actors simplify debugging by isolating state. Use `@MainActor` to debug UI-related concurrency.
-
-#### Example:
-```swift
-@MainActor
-actor Logger {
-    func log(_ message: String) {
-        print(message)
-    }
-}
-```
-
----
-
-## **5. Testing Cancellation**
-
-Verify that tasks respond to cancellation signals properly.
-
-#### Example:
+**Testing Cancellation**
 ```swift
 func testTaskCancellation() async {
     let task = Task {
@@ -129,55 +55,59 @@ func testTaskCancellation() async {
 
 ---
 
-## **6. Tips for Debugging**
+#### Debugging Concurrency
 
-1. **Log Task Events**:
-   - Add logs to track task creation, execution, and cancellation.
+- Add logs to track task creation, execution, and cancellation.
+- Use Instruments to analyze relationships between parent and child tasks.
+- Check task states like running, suspended, and canceled.
+- Ensure actors serialize access to their state.
 
-2. **Profile Task Hierarchy**:
-   - Use Instruments to analyze relationships between parent and child tasks.
+**Async Call Stack**
+- View the execution flow of asynchronous code in Xcode.
+- Use breakpoints in `async` functions to step through code.
 
-3. **Monitor Task States**:
-   - Check task states like running, suspended, and canceled.
+**Concurrency Instrument in Instruments**
+- Profile tasks, actors, and task groups.
+- Identify bottlenecks, long-running tasks, and contention points.
 
-4. **Validate Actor Behavior**:
-   - Ensure actors serialize access to their state.
+**Deadlocks**
+Deadlocks occur when tasks wait indefinitely for each other. Avoid them by designing clear task hierarchies.
 
----
+Debugging Deadlocks
+1. Use the thread debugger in Xcode to inspect thread states.
+2. Check for circular dependencies in task interactions.
 
-## **Conclusion**
+**Data Races**
+Data races happen when multiple tasks access shared mutable data simultaneously.
 
-Testing and debugging concurrency in Swift is essential for building robust applications. By leveraging XCTest, Instruments, and careful design practices, you can ensure that your asynchronous workflows are correct, efficient, and easy to maintain.
+1. Use actors to isolate state.
+2. Annotate shared state with `@Sendable`.
 
-## **Task Traces**
+**Debugging Actors**
 
-Swift Concurrency provides tools to trace task execution using Instruments.
+Actors simplify debugging by isolating state. Use `@MainActor` to debug UI-related concurrency.
 
-### Task Tracing Features:
-1. **Task Hierarchy Visualization**:
-   - View relationships between tasks and their parents.
-2. **Execution Timelines**:
-   - Analyze task execution times.
-3. **State Transitions**:
-   - Trace state changes (e.g., pending, running, suspended).
+#### Example:
+```swift
+@MainActor
+actor Logger {
+    func log(_ message: String) {
+        print(message)
+    }
+}
+```
 
+**Task Traces**
 
-## **Debugging and Optimization**
+- Swift Concurrency provides tools to trace task execution using Instruments.
 
-1. **Use Instruments for Tracing**:
-   - Profile task execution to identify bottlenecks.
+1. Task Hierarchy Visualization - view relationships between tasks and their parents.
+2. Execution Timelines - analyze task execution times.
+3. State Transitions - trace state changes (e.g., pending, running, suspended).
 
-2. **Log Task Events**:
-   - Add custom logs to trace task creation and completion.
+**Debugging and Optimization**
 
-3. **Aggregate Task Metrics**:
-   - Monitor task group execution time and resource usage.
-
-
-## **Debugging Actors**
-
-1. **Log Access**:
-   - Add logs in actor methods to trace execution.
-
-2. **Use Instruments**:
-   - Profile actor interactions and detect contention points.
+1. Use Instruments for Tracing - profile task execution to identify bottlenecks.
+2. Log Task Events - add custom logs to trace task creation and completion.
+3. Aggregate Task Metrics - monitor task group execution time and resource usage.
+4. Ensure proper task-scoping to maintain resource efficiency.
