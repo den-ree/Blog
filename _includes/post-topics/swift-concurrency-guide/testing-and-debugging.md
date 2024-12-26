@@ -172,3 +172,12 @@ Swift Concurrency provides tools to trace task execution using Instruments.
 
 3. **Aggregate Task Metrics**:
    - Monitor task group execution time and resource usage.
+
+
+## **Debugging Actors**
+
+1. **Log Access**:
+   - Add logs in actor methods to trace execution.
+
+2. **Use Instruments**:
+   - Profile actor interactions and detect contention points.

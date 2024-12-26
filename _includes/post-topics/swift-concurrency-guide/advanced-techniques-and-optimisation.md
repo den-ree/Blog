@@ -75,21 +75,7 @@ actor Counter {
 
 ---
 
-## **4. Sendable Protocol**
 
-The `Sendable` protocol ensures that values passed between concurrency domains are thread-safe.
-
-### Example:
-```swift
-struct UserProfile: Sendable {
-    let name: String
-    let age: Int
-}
-```
-
-### Benefits:
-- Prevents accidental sharing of unsafe types.
-- Enforced at compile time, providing strong guarantees.
 
 ---
 
@@ -428,3 +414,72 @@ Swift Concurrency revolutionizes asynchronous programming in Swift. By replacing
 Use Xcode's async call stack to trace async function calls. Instruments can also profile and debug tasks using the Swift Concurrency Instrument.
 
 ---
+
+
+## **What are Distributed Actors?**
+
+Distributed actors extend actors to support communication across process or network boundaries. They provide a foundation for building distributed systems.
+
+### Key Features:
+1. **Location Transparency**:
+   - The caller doesn’t need to know if the actor is local or remote.
+2. **Automatic Serialization**:
+   - Parameters and return values are serialized for remote communication.
+3. **Fault Tolerance**:
+   - Handle failures gracefully in distributed environments.
+
+---
+
+## **Declaring Distributed Actors**
+
+Use the `distributed actor` keyword for distributed actors.
+
+#### Example:
+```swift
+import Distributed
+
+distributed actor ChatService {
+    func sendMessage(_ message: String) async throws {
+        print("Sending message: \(message)")
+    }
+}
+```
+
+---
+
+## **Common Patterns with Distributed Actors**
+3. **Leverage Distributed Actors for Scalability**:
+   - Use distributed actors to build systems that scale across multiple devices or processes.
+1. **Remote Procedure Calls (RPC)**:
+   - Invoke methods on distributed actors as if they were local.
+
+#### Example:
+```swift
+distributed actor Calculator {
+    func add(_ a: Int, _ b: Int) -> Int {
+        return a + b
+    }
+}
+```
+
+2. **Error Handling**:
+   - Handle communication failures.
+   ```swift
+   do {
+       let result = try await remoteCalculator.add(3, 5)
+       print("Result: \(result)")
+   } catch {
+       print("Failed to communicate with the remote actor: \(error)")
+   }
+   ```
+
+---
+3. **Distributed Systems**:
+   - Build a distributed chat application.
+   ```swift
+   distributed actor ChatRoom {
+       func sendMessage(_ message: String) {
+           print("Message: \(message)")
+       }
+   }
+   ```
